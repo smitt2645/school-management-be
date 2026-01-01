@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use("/api/v1/", bookSetRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 sequelize.sync({ alter: true }).then(() => {
   console.log("Database connected !!!!!");

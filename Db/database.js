@@ -12,13 +12,11 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PASSWORD,
   {
-    port: process.env.PORT || 3306,
+    // port: process.env.PORT || 3306,
     host: process.env.DB_HOST || "localhost",
     dialect: "mysql",
     logging: false,
   }
 );
-
-export default sequelize;
 
 module.exports = sequelize;
