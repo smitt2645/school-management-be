@@ -1,13 +1,4 @@
 const { Sequelize } = require("sequelize");
-require("dotenv").config();
-
-// const sequelize = new Sequelize("school_inventory", "root", "", {
-//   host: "localhost",
-//   port: "3308",
-//   dialect: "mysql",
-// });
-
-const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -26,7 +17,5 @@ const sequelize = new Sequelize(
     },
   }
 );
-
-module.exports = sequelize;
 
 module.exports = sequelize;
