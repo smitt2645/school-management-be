@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const sequelize = require("./Db/database.js");
+require("dotenv").config();
 
 // Routes
 const bookSetRoutes = require("./Routes/index.js");
