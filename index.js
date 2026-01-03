@@ -2,7 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const sequelize = require("./Db/database.js");
-require("dotenv").config();
+const path = require("path");
+// require("dotenv").config();
+
+const envFile =
+  process.env.NODE_ENV === "PRODUCTION" ? ".env" : ".env.development";
+
+require("dotenv").config({
+  path: path.join(process.cwd(), envFile),
+});
 
 // Routes
 const bookSetRoutes = require("./Routes/index.js");
