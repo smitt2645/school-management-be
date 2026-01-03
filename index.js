@@ -8,6 +8,7 @@ const path = require("path");
 const envFile =
   process.env.NODE_ENV === "PRODUCTION" ? ".env" : ".env.development";
 
+console.log("envFile:::", envFile);
 require("dotenv").config({
   path: path.join(process.cwd(), envFile),
 });
@@ -16,7 +17,14 @@ require("dotenv").config({
 const bookSetRoutes = require("./Routes/index.js");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://school-management-be-31xm.onrender.com",
+    ],
+  })
+);
 app.use(bodyParser.json());
 
 app.use("/api/v1/", bookSetRoutes);
